@@ -6,6 +6,8 @@
 #include <iomanip>
 #include <algorithm>
 
+#include "Support.h"
+
 using namespace std;
 
 class Encoder
@@ -29,6 +31,9 @@ public:
         SortVector(symbolFrequency);
         GenerateShannonCodes();
         Display();
+
+        Support sup;
+        sup.Execute(symbolFrequency, uniqueLetterCount, codes);
 
 	}
 

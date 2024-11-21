@@ -74,7 +74,7 @@ void Encoder::GenerateShannonCodes()
         int codeValue = static_cast<int>(floor((temp - symbolFrequency[i].second) * (1 << lengthCodeWords[i])));
 
         string code;
-        for (int j = lengthCodeWords[i] - 1; j >= 0; --j)
+        for (int j = lengthCodeWords[i] - 1; j >= 0; j--)
         {
             code += (codeValue & (1 << j)) ? '1' : '0';
         }
