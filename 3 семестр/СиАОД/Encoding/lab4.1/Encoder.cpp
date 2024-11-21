@@ -119,3 +119,35 @@ void Encoder::Display() const
     cout << "Unique letters: " << uniqueLetterCount << endl;
     cout << "Total  letters: " << totalLetterCount << endl;
 }
+
+void Encoder::EncodeText(string pathToFile) {
+    ifstream reader;
+    reader.open(pathToFile);
+
+    if (reader.is_open()) {
+        string line = "", fullText = "", encodedText = "";
+
+        while (getline(reader, line)) {
+            fullText += line;
+        }
+
+        for (char c : fullText) {
+            for (int i = 0; i < symbolFrequency.size(); i++) {
+                if ((uint8_t)c == symbolFrequency[i].first) {
+                    encodedText += codes[i];
+                }
+            }
+        }
+
+        cout << "\nEncoded Text Length: " << encodedText.length() << " bit";
+        cout << "\nOrigin  Text Length: " << fullText.length() * 8 << " bit";
+        cout << "\nCompression Ratio: " << (float)fullText.length() * 8 / (float)encodedText.length();
+        cout << "\nEncoded Text:\n" << encodedText << endl;
+        
+    }
+    else {
+        cerr << "Unable to open file!\n";
+    }
+
+    reader.close();
+}

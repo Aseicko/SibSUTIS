@@ -36,5 +36,6 @@ public:
         sup.Execute(symbolFrequency, uniqueLetterCount, codes);
 
 	}
+    void EncodeText(string pathToFile);
 
 };
