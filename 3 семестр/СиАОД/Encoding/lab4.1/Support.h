@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include <iomanip>
 
 using namespace std;
 
@@ -15,13 +16,19 @@ public:
 	{
 		float entropy = CalculateEntropy(arrData);
 		float averageHeight = CalculateAverageLength(arrData, uniqueLetters, arrCodes);
-
-		cout << "\nKraft Inequality: " << (CheckKraftInequality(arrCodes) ? "Yes" : "No");
-		cout << "\nEntropy: " << entropy;
-		cout << "\nAverage Height: " << averageHeight;
-		cout << "\nRedundancy: " << averageHeight - entropy;
-		cout << endl;
-
+		cout << " +------------------+------------------+------------------+------------------+ \n";
+		cout << " | " << setw(16) << "Kraft Inequality"
+			<< " | " << setw(16) << "Entropy"
+			<< " | " << setw(16) << "Average Height"
+			<< " | " << setw(16) << "Redundancy"
+			<< " | \n";
+		cout << " +------------------+------------------+------------------+------------------+ \n";
+		cout << " | " << setw(16) << (CheckKraftInequality(arrCodes) ? "Yes" : "No")
+			<< " | " << setw(16) << entropy
+			<< " | " << setw(16) << averageHeight
+			<< " | " << setw(16) << averageHeight - entropy
+			<< " | \n";
+		cout << " +------------------+------------------+------------------+------------------+ \n";
 	}
 
 };

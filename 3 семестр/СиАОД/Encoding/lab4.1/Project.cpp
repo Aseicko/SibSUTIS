@@ -1,7 +1,7 @@
-#include "Encoder.h"
+#include "EncoderShannon.h"
 
 int main() {
-	Encoder test;
+	EncoderShannon test;
 
 	test.Execute();
 	test.EncodeText("text.txt");

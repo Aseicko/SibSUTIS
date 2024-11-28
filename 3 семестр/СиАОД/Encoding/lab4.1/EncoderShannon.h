@@ -10,7 +10,7 @@
 
 using namespace std;
 
-class Encoder
+class EncoderShannon
 {
 private:
     int uniqueLetterCount = 0;
@@ -21,7 +21,7 @@ private:
     void ReadFile(string pathToFile);
     void Display() const;
     void SortVector(vector<pair<int, float>>& vectorToSort);
-    void GenerateShannonCodes();
+    void GenerateCodes();
 
 public:
 	void Execute()
@@ -29,7 +29,7 @@ public:
 		setlocale(0, "");
 		ReadFile("input.txt");
         SortVector(symbolFrequency);
-        GenerateShannonCodes();
+        GenerateCodes();
         Display();
 
         Support sup;

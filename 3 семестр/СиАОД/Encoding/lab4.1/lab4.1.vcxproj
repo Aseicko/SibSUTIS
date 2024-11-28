@@ -127,11 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Encoder.h" />
+    <ClInclude Include="EncoderShannon.h" />
     <ClInclude Include="Support.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Encoder.cpp" />
+    <ClCompile Include="EncoderShannon.cpp" />
     <ClCompile Include="Project.cpp" />
     <ClCompile Include="Support.cpp" />
   </ItemGroup>

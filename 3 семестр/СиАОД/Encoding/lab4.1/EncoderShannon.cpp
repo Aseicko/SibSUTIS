@@ -1,6 +1,6 @@
-#include "Encoder.h"
+#include "EncoderShannon.h"
 
-void Encoder::ReadFile(string pathToFile)
+void EncoderShannon::ReadFile(string pathToFile)
 {
     symbolFrequency.clear();
     ifstream reader;
@@ -48,7 +48,7 @@ void Encoder::ReadFile(string pathToFile)
 
 }
 
-void Encoder::SortVector(vector<pair<int, float>>& vectorToSort)
+void EncoderShannon::SortVector(vector<pair<int, float>>& vectorToSort)
 {
     sort(vectorToSort.begin(), vectorToSort.end(),
         [](const pair<int, float>& a, const pair<int, float>& b) { return a.second > b.second; }
@@ -58,7 +58,7 @@ void Encoder::SortVector(vector<pair<int, float>>& vectorToSort)
 
 }
 
-void Encoder::GenerateShannonCodes()
+void EncoderShannon::GenerateCodes()
 {
     vector<int> lengthCodeWords(uniqueLetterCount);
     codes.resize(uniqueLetterCount);
@@ -86,7 +86,7 @@ void Encoder::GenerateShannonCodes()
 
 }
 
-void Encoder::Display() const
+void EncoderShannon::Display() const
 {
     string temp = " +---------+--------------+------------------+ \n";
 
@@ -120,7 +120,7 @@ void Encoder::Display() const
     cout << "Total  letters: " << totalLetterCount << endl;
 }
 
-void Encoder::EncodeText(string pathToFile) {
+void EncoderShannon::EncodeText(string pathToFile) {
     ifstream reader;
     reader.open(pathToFile);
 
