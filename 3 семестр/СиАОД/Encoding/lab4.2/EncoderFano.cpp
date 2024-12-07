@@ -58,20 +58,21 @@ void EncoderFano::SortVector(vector<pair<int, float>>& vectorToSort)
 
 }
 
-void EncoderFano::GenerateCodes()
+void EncoderFano::GenerateCodes(int(EncoderFano::* op)(int, int))
 {
+    codes.clear();
     codes.resize(uniqueLetterCount);
-    HelperGenerateCodes(0, symbolFrequency.size() - 1);
+    HelperGenerateCodes(0, symbolFrequency.size() - 1, op);
 
     clog << "Generating Fano code complete!\n";
 
 }
 
-void EncoderFano::HelperGenerateCodes(int borderLeft, int borderRight)
+void EncoderFano::HelperGenerateCodes(int borderLeft, int borderRight, int(EncoderFano::* op)(int, int))
 {
     if (borderLeft >= borderRight) return;
-    
-    int median = FindMedian(borderLeft, borderRight);
+
+    int median = (this->*op)(borderLeft, borderRight);
 
     for (int i = borderLeft; i <= borderRight; i++)
     {
@@ -85,9 +86,9 @@ void EncoderFano::HelperGenerateCodes(int borderLeft, int borderRight)
         }
     }
 
-    HelperGenerateCodes(borderLeft, median);
-    HelperGenerateCodes(median + 1, borderRight);
-    
+    HelperGenerateCodes(borderLeft, median, op);
+    HelperGenerateCodes(median + 1, borderRight, op);
+
 }
 
 int EncoderFano::FindMedian(int borderLeft, int borderRight)
@@ -114,6 +115,22 @@ int EncoderFano::FindMedian(int borderLeft, int borderRight)
     }
 
     return output;
+}
+
+int EncoderFano::FindMedianA2(int l, int r)
+{
+    float sum1 = 0.0, sum2 = 0.0;
+    for (int i = l; i <= r; i++)
+    {
+        sum1 += symbolFrequency[i].second;
+    }
+
+    for (int i = l; i < r; i++)
+    {
+        sum2 += symbolFrequency[i].second;
+        if (sum2 >= sum1 / 2) return i;
+    }
+    return l;
 }
 
 void EncoderFano::Display() const

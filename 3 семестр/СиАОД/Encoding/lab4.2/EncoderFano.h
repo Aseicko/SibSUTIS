@@ -21,9 +21,10 @@ private:
     void ReadFile(string pathToFile);
     void Display() const;
     void SortVector(vector<pair<int, float>>& vectorToSort);
-    void GenerateCodes();
-    void HelperGenerateCodes(int borderLeft, int borderRight);
+    void GenerateCodes(int(EncoderFano::*)(int, int));
+    void HelperGenerateCodes(int borderLeft, int borderRight, int(EncoderFano::*)(int, int));
     int FindMedian(int borderLeft, int borderRight);
+    int FindMedianA2(int borderLeft, int borderRight);
 
 public:
     void Execute(string pathToFile)
@@ -31,10 +32,16 @@ public:
         setlocale(0, "");
         ReadFile(pathToFile);
         SortVector(symbolFrequency);
-        GenerateCodes();
-        Display();
 
         Support sup;
+
+        GenerateCodes(&EncoderFano::FindMedian);
+        Display();
+        cout << "\nDefault Find Median Algorithm\n:";
+        sup.Execute(symbolFrequency, uniqueLetterCount, codes);
+
+        GenerateCodes(&EncoderFano::FindMedianA2);
+        cout << "\nOBS Tree A2 Find Median Algorithm\n:";
         sup.Execute(symbolFrequency, uniqueLetterCount, codes);
 
     }
