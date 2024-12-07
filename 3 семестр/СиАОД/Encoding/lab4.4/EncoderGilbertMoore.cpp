@@ -60,6 +60,7 @@ void EncoderGilbertMoore::SortVector(vector<pair<int, float>>& vectorToSort)
 
 void EncoderGilbertMoore::GenerateCodes()
 {
+    codes.clear();
     codes.resize(uniqueLetterCount);
     vector<double> Q(uniqueLetterCount);
 

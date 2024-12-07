@@ -24,10 +24,10 @@ private:
     void GenerateCodes();
 
 public:
-	void Execute()
+	void Execute(string pathToFile)
 	{
 		setlocale(0, "");
-		ReadFile("input.txt");
+		ReadFile(pathToFile);
         SortVector(symbolFrequency);
         GenerateCodes();
         Display();

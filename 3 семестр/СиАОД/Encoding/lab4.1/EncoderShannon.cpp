@@ -60,6 +60,7 @@ void EncoderShannon::SortVector(vector<pair<int, float>>& vectorToSort)
 
 void EncoderShannon::GenerateCodes()
 {
+    codes.clear();
     vector<int> lengthCodeWords(uniqueLetterCount);
     codes.resize(uniqueLetterCount);
 

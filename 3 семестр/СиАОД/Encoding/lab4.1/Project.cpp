@@ -3,7 +3,7 @@
 int main() {
 	EncoderShannon test;
 
-	test.Execute();
+	test.Execute("input.txt");
 	test.EncodeText("text.txt");
 
 	return 0;
