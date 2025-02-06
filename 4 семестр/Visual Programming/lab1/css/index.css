@@ -1,0 +1,134 @@
+:root{
+    --color-main: #fefefe;
+    --color-accent-1: #E2E2E2;
+    --color-accent-2: #847462;
+    --color-accent-3: #FFB864;
+    --color-text-lighter: #ffffff;
+    --color-text-light: #808080;
+    --color-text-dark: #606060;
+    --color-text-darker: #101010;
+
+    --font-size-h1: 8vw;
+    --font-size-h2: 2vw;
+    --font-size-main: 1.6vw;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.head-wrapper{
+    display: none;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+html, body{
+    background-color: var(--color-main);
+    padding: 0;
+    margin: 0;
+    border: 0;
+    height: 100%;
+    width: 100%;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.header-wrapper{
+    min-height: 32vh;
+    background-image: url(../img/zenith-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.text-wrapper-title, .text-wrapper-subtitle{
+    color: var(--color-text-lighter);
+    margin: 0 32vw 0 32vw;
+    text-align: center;
+}
+
+.text-wrapper-title{
+    font-size: var(--font-size-h1);
+    font-family:'Times New Roman', Times, serif;
+    font-weight: lighter;
+}
+
+.text-wrapper-subtitle{
+    font-size: var(--font-size-h2);
+}
+
+.text-wrapper-section-title{
+    color: var(--color-text-darker);
+    font-size: var(--font-size-h2);
+    text-align: left;
+    padding-bottom: 1vh;
+    border-bottom: 0.16vh solid var(--color-accent-1);
+}
+
+.section-wrapper{
+    margin: 1vh 16vw 1vh 16vw;
+}
+
+.main-wrapper{
+    padding: 4vh 0 4vh 0;
+    background-color: var(--color-main);
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.horizontal-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.horizontal-list li{
+    flex: 1;
+    font-size: var(--font-size-main);
+    text-align: center;
+}
+
+.horizontal-list li img{
+    height: 128px;
+}
+
+.vertical-list p{
+    padding-left: 4vw;
+    border-left: 16px solid;
+    font-size: var(--font-size-main);
+}
+
+.vertical-list p:nth-child(1){
+    border-color: var(--color-accent-1);
+    color: var(--color-text-light);
+}
+
+.vertical-list p:nth-child(n + 2){
+    border-color: var(--color-accent-2);
+    color: var(--color-text-dark);
+}
+
+.vertical-list p:nth-child(4){
+    border-color: var(--color-accent-3);
+    color: var(--color-text-darker);
+}
+
+footer{
+    display: flex;
+    background-color: var(--color-accent-2);
+    color: var(--color-text-lighter);
+    padding: 2vh 0 2vh 0;
+    margin-top: auto;
+    justify-content: center;
+}
+
+footer p{
+    margin: 0 2vw 0 2vw;
+}
