@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" id="html-wrapper">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/demo.css" />
+  </head>
+  <body id="body-wrapper">
+    <header id="header-wrapper">
+      <p>Visual demonstration of some flex container properties</p>
+    </header>
+    <aside id="aside-wrapper">
+      <p>Properties</p>
+      <nav>
+        <a href="#1"> flex-direction </a>
+        <a href="#2"> flex-wrap </a>
+        <a href="#3"> justify-content </a>
+      </nav>
+    </aside>
+    <main id="main-wrapper">
+      <article>
+        <span id="1"></span>
+        <h1>flex-direction</h1>
+        <section style="flex: 0.2">
+          <p class="short-info">
+            The flex-direction CSS property sets how flex items are placed in
+            the flex container defining the main axis and the direction.
+          </p>
+          <dl>
+            <dt>row</dt>
+            <dd>
+              The flex container's main-axis is defined to be the same as the
+              text direction. The main-start and main-end points are the same as
+              the content direction.
+            </dd>
+            <dt>row-reverse</dt>
+            <dd>
+              Behaves the same as row but the main-start and main-end points are
+              opposite to the content direction.
+            </dd>
+            <dt>column</dt>
+            <dd>
+              The flex container's main-axis is the same as the block-axis. The
+              main-start and main-end points are the same as the before and
+              after points of the writing-mode.
+            </dd>
+            <dt>column-reverse</dt>
+            <dd>
+              Behaves the same as column but the main-start and main-end are
+              opposite to the content direction.
+            </dd>
+          </dl>
+        </section>
+        <section class="demo-container">
+          <div style="grid-area: a1" class="demo-property" id="d1_1">
+            flex-direction: row;
+          </div>
+          <div style="grid-area: a2" class="demo-property" id="d1_2">
+            flex-direction: row-reverse;
+          </div>
+          <div style="grid-area: a3" class="demo-property" id="d1_3">
+            flex-direction: column;
+          </div>
+          <div style="grid-area: a4" class="demo-property" id="d1_4">
+            flex-direction: column-reverse;
+          </div>
+          <div style="grid-area: b1" class="demo-visual">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </section>
+      </article>
+      <article>
+        <span id="2"></span>
+        <h1>flex-wrap</h1>
+        <section style="flex: 0.2">
+          <p class="short-info">
+            The flex-wrap CSS property sets whether flex items are forced onto
+            one line or can wrap onto multiple lines. If wrapping is allowed, it
+            sets the direction that lines are stacked.
+          </p>
+          <dl>
+            <dt>nowrap</dt>
+            <dd>
+              The flex items are laid out in a single line which may cause the
+              flex container to overflow. The cross-start is the equivalent of
+              inline-start or block-start, depending on the flex-direction
+              value. This is the default value.
+            </dd>
+            <dt>wrap</dt>
+            <dd>
+              The flex items break into multiple lines. The cross-start is the
+              equivalent of inline-start or block-start, depending on the
+              current writing mode, and the flex-direction value.
+            </dd>
+            <dt>wrap-reverse</dt>
+            <dd>
+              Behaves the same as wrap, but cross-start and cross-end are
+              inverted.
+            </dd>
+          </dl>
+        </section>
+        <section class="demo-container">
+          <div style="grid-area: a1" class="demo-property" id="d2_1">
+            flex-wrap: nowrap;
+          </div>
+          <div style="grid-area: a2" class="demo-property" id="d2_2">
+            flex-wrap: wrap;
+          </div>
+          <div style="grid-area: a3" class="demo-property" id="d2_3">
+            flex-wrap: wrap-reverse;
+          </div>
+          <div style="grid-area: b1" class="demo-visual" id="d2_d">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </section>
+      </article>
+      <article>
+        <span id="3"></span>
+        <h1>justify-content</h1>
+        <section style="flex: 0.2">
+          <p class="short-info">
+            The CSS justify-content property defines how the browser distributes
+            space between and around content items along the main axis of a flex
+            container and the inline axis of grid and multicol containers.
+          </p>
+          <dl>
+            <dt>start</dt>
+            <dd>
+              The items are packed flush to each other toward the start edge of
+              the alignment container in the main axis.
+            </dd>
+            <dt>center</dt>
+            <dd>
+              The items are packed flush to each other toward the center of the
+              alignment container along the main axis.
+            </dd>
+            <dt>end</dt>
+            <dd>
+              The items are packed flush to each other toward the end edge of
+              the alignment container in the main axis.
+            </dd>
+          </dl>
+        </section>
+        <section class="demo-container">
+          <div style="grid-area: a1" class="demo-property" id="d3_1">
+            justify-content: start;
+          </div>
+          <div style="grid-area: a2" class="demo-property" id="d3_2">
+            justify-content: center;
+          </div>
+          <div style="grid-area: a3" class="demo-property" id="d3_3">
+            justify-content: end;
+          </div>
+          <div style="grid-area: b1" class="demo-visual">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </section>
+      </article>
+    </main>
+    <footer id="footer-wrapper">
+      <p>© Aseicko | 2025</p>
+    </footer>
+  </body>
+</html>

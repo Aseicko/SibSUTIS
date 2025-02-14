@@ -1,0 +1,58 @@
+#d1_1:hover ~ .demo-visual{
+    flex-direction: row;
+}
+
+#d1_2:hover ~ .demo-visual{
+    flex-direction: row-reverse;
+}
+
+#d1_3:hover ~ .demo-visual{
+    flex-direction: column;
+}
+
+#d1_4:hover ~ .demo-visual{
+    flex-direction: column-reverse;
+}
+
+#d1_1:hover ~ .demo-visual div, #d1_2:hover ~ .demo-visual div{
+    max-width: 32px;
+    max-height: none;
+}
+
+#d1_3:hover ~ .demo-visual div, #d1_4:hover ~ .demo-visual div{
+    max-width: none;
+    max-height: 32px;
+}
+
+#d2_d{
+    overflow: scroll;
+}
+
+#d2_d div{
+    max-height: 128px;
+    min-width: 128px;
+}
+
+#d2_1:hover ~ .demo-visual{
+    flex-wrap: nowrap;
+}
+
+#d2_2:hover ~ .demo-visual{
+    flex-wrap: wrap;
+}
+
+#d2_3:hover ~ .demo-visual{
+    flex-wrap: wrap-reverse;
+}
+
+#d3_1:hover ~ .demo-visual{
+    justify-content: start;
+}
+
+#d3_2:hover ~ .demo-visual{
+    justify-content: center;
+}
+
+#d3_3:hover ~ .demo-visual{
+    justify-content: end;
+}
